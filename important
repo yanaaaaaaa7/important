@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Update</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f6f8fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(20,30,50,0.08);
+    max-width: 500px;
+    background: white;
+  }
+  h1 { margin: 0 0 10px; font-size: 22px; }
+  p { color: #555; margin-bottom: 20px; }
+  canvas { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 Happy Birthday, Yan Yan! 🎂</h1>
+    <p>Wishing you an amazing day filled with joy and fun! ❤️</p>
+    <audio id="song" autoplay>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <canvas id="confetti" width="400" height="160"></canvas>
+  </div>
+
+<script>
+const confetti = document.getElementById('confetti');
+confetti.width = window.innerWidth * 0.8;
+confetti.height = 160;
+const ctx = confetti.getContext('2d');
+
+// Draw simple confetti
+for (let i = 0; i < 150; i++) {
+  ctx.fillStyle = ['#FF5A5F','#7BDCB5','#00A699','#FCB0B3','#FFD166'][i % 5];
+  ctx.fillRect(Math.random() * confetti.width, Math.random() * confetti.height, 6, 10);
+}
+</script>
+</body>
+</html>
